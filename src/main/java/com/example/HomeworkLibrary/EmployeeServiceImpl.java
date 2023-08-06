@@ -1,5 +1,6 @@
 package com.example.HomeworkLibrary;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -15,10 +16,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public static final int MAX_EMPLOYEE_COUNT = 4;
     @Override
     public Employee addEmployee(String firstName, String lastName, double salary, int department) {
-        if (employeeMap.size() == MAX_EMPLOYEE_COUNT) { //проходимся по списку сотрудников
+        if (employeeMap.size() == MAX_EMPLOYEE_COUNT) {
             throw new EmployeeStorageIsFullException("Превышен лимит сотрудников");
         }
-        Employee employee = new Employee(firstName, lastName, salary, department);
+        Employee employee = new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), salary, department);
         String key = firstName + lastName;
 
         if(employeeMap.containsKey(key)) {
