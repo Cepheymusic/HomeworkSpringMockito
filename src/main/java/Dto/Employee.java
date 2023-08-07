@@ -1,4 +1,4 @@
-package com.example.HomeworkLibrary;
+package Dto;
 
 import java.util.Objects;
 
