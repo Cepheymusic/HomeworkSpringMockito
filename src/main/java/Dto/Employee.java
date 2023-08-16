@@ -40,7 +40,6 @@ public class Employee {
                 ", department=" + department +
                 '}';
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
